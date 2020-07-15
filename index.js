@@ -134,12 +134,16 @@ function evaluatePage() {
 async function customCrawl(page, crawl) {
   var result = [];
   var cookies = [];
+  result.length = 0;
+  cookies.length = 0;
   result = await crawl();
   cookies = await page._client.send('Network.getAllCookies');
   result.cookies = cookies.cookies;
   return result;
   result = [];
   cookies = [];
+  result.cookies = [];
+  cookies.cookies = [];
 }
 
 /**
