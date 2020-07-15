@@ -138,6 +138,8 @@ async function customCrawl(page, crawl) {
   cookies = await page._client.send('Network.getAllCookies');
   result.cookies = cookies.cookies;
   return result;
+  result = [];
+  cookies = [];
 }
 
 /**
