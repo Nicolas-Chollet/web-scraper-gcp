@@ -73,7 +73,7 @@ async function writeToBigQuery(result) {
     content_type: result.response.headers['content-type'],
     external: checkIfUrlExternal(result.response.url),
     previous_url: result.previousUrl,
-    cookies: !!checkIfUrlExternal(result.response.url) ? [] : result.cookies.map(c => ({
+    cookies: result.cookies.map(c => ({
       name: c.name,
       value: c.value,
       domain: c.domain,
