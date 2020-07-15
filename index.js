@@ -178,7 +178,7 @@ async function launchCrawler() {
 
     const crawler = await HCCrawler.launch(options);
 
-    await crawler.queue({url: config.startUrl, maxDepth: 2});
+    await crawler.queue({url: config.startUrl, maxDepth: 4});
 
     await crawler.onIdle();
     const finish = new Date().getTime();
