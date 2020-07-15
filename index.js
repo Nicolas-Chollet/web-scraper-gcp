@@ -132,8 +132,9 @@ function evaluatePage() {
  * @returns {Promise<*>}
  */
 async function customCrawl(page, crawl) {
-  const result = await crawl();
-  var cookies=[];
+  var result = [];
+  var cookies = [];
+  result = await crawl();
   cookies = await page._client.send('Network.getAllCookies');
   result.cookies = cookies.cookies;
   return result;
