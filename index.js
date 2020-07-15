@@ -69,7 +69,7 @@ async function writeToBigQuery(result) {
   const item = {
     requested_url: result.options.url,
     final_url: result.response.url,
-    http_status: result.response.status,
+    http_status: count,
     content_type: result.response.headers['content-type'],
     external: checkIfUrlExternal(result.response.url),
     previous_url: result.previousUrl,
