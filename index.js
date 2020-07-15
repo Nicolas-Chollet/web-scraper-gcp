@@ -133,7 +133,7 @@ function evaluatePage() {
  */
 async function customCrawl(page, crawl) {
   const result = await crawl();
-  result.cookies = null;
+  cookies.cookies = null;
   const cookies = await page._client.send('Network.getAllCookies');
   result.cookies = cookies.cookies;
   return result;
